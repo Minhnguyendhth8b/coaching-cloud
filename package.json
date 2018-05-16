@@ -1,0 +1,19 @@
+{
+  "name": "coaching-cloud",
+  "version": "1.0.0",
+  "description": "Coaching Cloud API Technical Challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minhnguyendhth8b/coaching-cloud.git"
+  },
+  "author": "Minh Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Minhnguyendhth8b/coaching-cloud/issues"
+  },
+  "homepage": "https://github.com/Minhnguyendhth8b/coaching-cloud#readme"
+}
