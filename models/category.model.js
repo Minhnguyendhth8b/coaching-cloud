@@ -24,6 +24,41 @@ const CategorySchema = new Schema(
     }
 )
 
+CategorySchema.methods = {
+    toJSON() {
+        return {
+            _id: this._id,
+            name: this.name,
+            description: this.description,
+            products: this.products,
+            created: this.createdAt,
+            modified: this.updatedAt
+        }
+    }
+}
+
+CategorySchema.statics = {
+    /**
+     * Create a category
+     */
+    createCategory(args) {
+        return this.create({
+            ...args
+        })
+    },
+
+    /**
+     * Get List Categories
+     */
+    getLists(skip = 0, limit = 30) {
+        return this.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .populate('product');
+    }
+}
+
 let Category;
 
 try {

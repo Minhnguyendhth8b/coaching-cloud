@@ -43,6 +43,29 @@ ProductSchema.methods = {
     }
 }
 
+ProductSchema.statics = {
+    /**
+     * Create a product
+     */
+    createProduct(args, categoryId) {
+        return this.create({
+            ...args,
+            category: categoryId
+        })
+    },
+
+    /**
+     * Get List Products
+     */
+    getLists(skip = 0, limit = 30) {
+        return this.find()
+            .sort({ createdAt: -1 })
+            .skip(skip)
+            .limit(limit)
+            .populate('category');
+    }
+}
+
 let Product;
 
 try {

@@ -10,6 +10,16 @@ const routes = new Router();
 const isDev = process.env.NODE_ENV === 'dev';
 const isTest = process.env.NODE_ENV === 'test';
 
+import Hateos from '../services/hateos';
+
+Hateos.registerLinkHandler("root", () => {
+    return {
+        "self": "/",
+        "products": "/products",
+        "categories": "/categories"
+    }
+})
+
 routes.get('/', (req, res, next) => {
     res.json({
         Welcome: 'Welcome to Coaching Cloud API'

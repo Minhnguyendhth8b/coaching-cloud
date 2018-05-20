@@ -15,8 +15,9 @@ const routes = new Router();
 
 routes.get('/', ProductController.findAll) // Get all products
 routes.get('/:id', ProductController.findById); // Get Product By Id
+routes.get('/:id/category', ProductController.getCategoryById);
 routes.post('/', ProductController.create);
 routes.patch('/:id', ProductController.update);
-routes.delete('/:id', ProductController.deleteById); 
+routes.delete('/:id', ProductController.deleteById);
 
 export default routes;
